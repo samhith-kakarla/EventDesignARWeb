@@ -3,7 +3,7 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
-
+import { LandingPage, SignUpPage } from '../UserFlow';
 
 function App() {
   return (
