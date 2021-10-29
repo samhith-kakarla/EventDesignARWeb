@@ -7,7 +7,9 @@ import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
 function App() {
   return (
-    <div></div>
+    <div className="bg-black">
+      <h1>app</h1>
+    </div>
   )
 };
 
