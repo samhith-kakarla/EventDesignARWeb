@@ -1,7 +1,7 @@
 import LandingPage from './Landing';
-import SignUp from './SignUp';
+import SignUpPage from './SignUp';
 
 export {
   LandingPage,
-	SignUp,
+	SignUpPage,
 }
