@@ -1,10 +1,10 @@
-export const LOGIN = 'LOGIN';
-export const LOGOUT = 'LOGOUT';
+export const SET_USER = 'SET_USER';
+export const UNSET_USER = 'UNSET_USER';
 
-export function login(userId) {
-  return { type: LOGIN, payload: { userId } };
+export function setUser(userId, fullName, email) {
+  return { type: SET_USER, payload: { userId, fullName, email } };
 }
 
-export function logout() {
-  return { type: LOGOUT, payload: {} };
+export function unsetUser() {
+  return { type: UNSET_USER, payload: {} };
 }

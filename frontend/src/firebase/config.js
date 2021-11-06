@@ -1,4 +1,6 @@
-import * as firebase from 'firebase';
+import { initializeApp } from 'firebase/app';
+import * as firebaseAuth from 'firebase/auth';
+import * as firebaseFirestore from 'firebase/firestore/lite';
 
 import {
   FIREBASE_API_KEY,
@@ -7,7 +9,6 @@ import {
   FIREBASE_STORAGE_BUCKET,
   FIREBASE_MESSAGE_SENDER_ID,
   FIREBASE_APP_ID,
-  FIREBASE_MEASUREMENT_ID,
 } from '../constants';
 
 const firebaseConfig = {
@@ -17,10 +18,11 @@ const firebaseConfig = {
   storageBucket: FIREBASE_STORAGE_BUCKET,
   messagingSenderId: FIREBASE_MESSAGE_SENDER_ID,
   appId: FIREBASE_APP_ID,
-  measurementId: FIREBASE_MEASUREMENT_ID,
 };
 
-const firebaseApp = firebase.initializeApp(firebaseConfig);
+const firebaseApp = initializeApp(firebaseConfig);
 
-export const firebaseAuth = firebaseApp.auth();
-export const firebaseFirestore = firebaseApp.firestore();
+export const auth = firebaseAuth.getAuth(firebaseApp);
+export const firestore = firebaseFirestore.getFirestore(firebaseApp);
+
+export default firebaseApp;

@@ -1,11 +1,13 @@
-import { firebaseFirestore } from './config';
+import { firestore as firebaseFirestore } from './config';
+import { doc, setDoc, getDoc } from 'firebase/firestore/lite';
 
 export const createNewUser = async (user) => {
   try {
-    await firebaseFirestore
-      .collection('users')
-      .doc(user.userId)
-      .set({ email: user.email, name: user.name });
+    const userDocRef = await setDoc(
+      doc(firebaseFirestore, 'users', user.userId), 
+      { email: user.email, fullName: user.name },
+    );
+    console.log(userDocRef.id);
 
     return '';
   } catch (error) {
@@ -16,12 +18,9 @@ export const createNewUser = async (user) => {
 
 export const getUserInfo = async (user, thenFunc) => {
   try {
-    const userInfo = await firebaseFirestore
-      .collection('users')
-      .doc(user.userId)
-      .get();
+    const userInfo = await getDoc(doc(firebaseFirestore, 'users', user.userId));
 
-    await thenFunc(userInfo);
+    await thenFunc(userInfo.data());
     return '';
   } catch (error) {
     console.log(error);
