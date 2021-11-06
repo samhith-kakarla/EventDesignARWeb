@@ -9,7 +9,7 @@ const initialState = {
 
 export default (state = initialState, action) => {
   switch (action.type) {
-    case types.USER:
+    case types.SET_USER:
       localStorage.setItem('userId', JSON.stringify(action.payload.userId));
       localStorage.setItem('fullName', JSON.stringify(action.payload.fullName));
       localStorage.setItem('email', JSON.stringify(action.payload.email));
