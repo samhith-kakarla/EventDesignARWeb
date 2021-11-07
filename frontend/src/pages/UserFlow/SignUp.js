@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 
 import { Link } from 'react-router-dom';
@@ -25,12 +25,14 @@ const SignUpPage = () => {
       email,
       password,
       async (userId, userEmail, userName) => {
+        console.log(userId);
         signupUser(userId, userEmail, userName);
         const error = await createNewUser({
           userId: userId,
           email: userEmail,
           name: userName,
         });
+        console.log("signed up");
 
         setError(error);
         if (error !== '') {
@@ -111,10 +113,11 @@ const SignUpPage = () => {
             className="flex-1 ml-2 text-gray-three bg-gray-one rounded-md focus:outline-none w-72"
           />
         </div>
-        <button className="bg-orange-three hover:bg-orange-two transition duration-300 ease-in-out text-white m-auto w-full p-2 font-bold rounded-md mt-6">SIGN UP</button>
-        <div className="flex mt-6">
-          <p className=" text-gray-three">Already have an account?    <Link to="/" className="text-orange-one hover:text-orange-two transition duration-300 ease-in-out font-semibold ml-3">Login</Link> </p>
-        </div>
+        <button onClick={handleSignUp} className="bg-orange-three hover:bg-orange-two transition duration-300 ease-in-out text-white m-auto w-full p-2 font-bold rounded-md mt-6">SIGN UP</button>
+        <p className=" text-gray-three mt-6 text-center">Already have an account?    <Link to="/" className="text-orange-one hover:text-orange-two transition duration-300 ease-in-out font-semibold ml-3">Login</Link> </p>
+        {error !== '' && (
+          <p className="text-center text-red-600 text-xs mt-6">{error}</p>
+        )}
       </div>
     </div>
   )

@@ -19,10 +19,12 @@ const LandingPage = () => {
 
   const handleLogin = async () => {
     const error = await login(email, password, async (userCred) => {
+      console.log(userCred);
       const userId = userCred.user.uid;
       const email = userCred.user.email;
       const fullName = userCred.user.displayName;
       loginUser(userId, email, fullName);
+      console.log("logged in");
     });
 
     setError(error);
@@ -76,10 +78,11 @@ const LandingPage = () => {
             className="flex-1 ml-2 text-gray-three bg-gray-one rounded-md focus:outline-none w-72"
           />
         </div>
-        <button className="bg-orange-three hover:bg-orange-two transition duration-300 ease-in-out text-white m-auto w-full p-2 font-bold rounded-md mt-6">LOGIN</button>
-        <div className="flex mt-6">
-          <p className=" text-gray-three">Don't have an account yet?    <Link to="/signup" className="text-orange-one hover:text-orange-two transition duration-300 ease-in-out font-semibold ml-3">Sign Up</Link> </p>
-        </div>
+        <button onClick={handleLogin} className="bg-orange-three hover:bg-orange-two transition duration-300 ease-in-out text-white m-auto w-full p-2 font-bold rounded-md mt-6">LOGIN</button>
+        <p className="text-center mt-6 text-gray-three">Don't have an account yet?    <Link to="/signup" className="text-orange-one hover:text-orange-two transition duration-300 ease-in-out font-semibold ml-3">Sign Up</Link> </p>
+        {error !== '' && (
+          <p className="text-center text-red-600 text-xs mt-6">{error}</p>
+        )}
       </div>
     </div>
   );

@@ -7,7 +7,7 @@ export const createNewUser = async (user) => {
       doc(firebaseFirestore, 'users', user.userId), 
       { email: user.email, fullName: user.name },
     );
-    console.log(userDocRef.id);
+    console.log(userDocRef);
 
     return '';
   } catch (error) {
