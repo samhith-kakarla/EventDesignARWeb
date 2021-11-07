@@ -3,7 +3,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
-import { TabsNavigation } from '../../navigation'; 
+import { TabsNavigation, HeaderBar } from '../../navigation'; 
 import { LandingPage, SignUpPage } from '../UserFlow';
 import { HomePage } from '../Home';
 import { CameraPage } from '../Camera';
@@ -15,6 +15,9 @@ function App() {
   return (
     <div className="bg-gray-one h-screen flex flex-col">
       <Router>
+        {isAuthenticated && (
+          <HeaderBar />
+        )}
         <section className="flex-grow">
           <Switch>
             <Route exact path="/" component={LandingPage} />
@@ -29,7 +32,7 @@ function App() {
         <footer className="body-font">
           <div className="bg-gray-two">
             <div className="container mx-auto py-4 px-5">
-              <p className="text-white text-sm text-center">
+              <p className="text-gray-three text-sm text-center">
                 © 2021 Event Design AR
               </p>
             </div>

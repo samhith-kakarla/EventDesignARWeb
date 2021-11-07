@@ -1,3 +1,4 @@
 import TabsNavigation from './Tabs';
+import HeaderBar from './Header';
 
-export { TabsNavigation };
+export { TabsNavigation, HeaderBar };

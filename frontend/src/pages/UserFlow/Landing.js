@@ -17,7 +17,7 @@ const LandingPage = () => {
   const [error, setError] = useState('');
 
   const dispatch = useDispatch();
-  const loginUser = (userId, fullName, email) => dispatch(reduxSetUser(userId, fullName, email));
+  const loginUser = (userId, email, fullName) => dispatch(reduxSetUser(userId, email, fullName));
   const loginUserFailed = () => dispatch(reduxUnsetUser());
 
   const handleLogin = async () => {

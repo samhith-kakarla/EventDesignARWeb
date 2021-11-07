@@ -7,13 +7,16 @@ import { Redirect } from 'react-router-dom';
 const HomePage = () => {
   const userId = useSelector((state) => state.user.userId);
   const isAuthenticated = userId && userId.length > 0;
+  const userFullName = useSelector((state) => state.user.fullName);
 
   if (!isAuthenticated) {
     return <Redirect to="/" />
   }
   
   return (
-    <div></div>
+    <div className="px-96 pt-16">
+      Hello, {userFullName}!
+    </div>
   );
 };
 
