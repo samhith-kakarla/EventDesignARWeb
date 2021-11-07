@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 // import PropTypes from 'prop-types';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import { MdMail } from 'react-icons/md';
 import { FaLock, FaUser } from 'react-icons/fa';
 import { setUser as reduxSetUser, unsetUser as reduxUnsetUser } from '../../redux/actions/userActions';
@@ -10,6 +10,9 @@ import { signup } from '../../firebase/auth';
 import { createNewUser } from '../../firebase/user';
 
 const SignUpPage = () => {
+  const userId = useSelector((state) => state.user.userId);
+  const isAuthenticated = userId && userId.length > 0;
+
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -46,6 +49,10 @@ const SignUpPage = () => {
       signupUserFailed();
     }
   };
+
+  if (isAuthenticated) {
+    return <Redirect to="/home" push />
+  }
 
   return (
     <div className="flex justify-center">

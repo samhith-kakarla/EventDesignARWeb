@@ -1,14 +1,17 @@
 import React, { useState } from 'react';
 // import PropTypes from 'prop-types';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import { MdMail } from 'react-icons/md';
 import { FaLock } from 'react-icons/fa';
 import { setUser as reduxSetUser, unsetUser as reduxUnsetUser } from '../../redux/actions/userActions';
 import { login } from '../../firebase/auth';
 
 const LandingPage = () => {
+  const userId = useSelector((state) => state.user.userId);
+  const isAuthenticated = userId && userId.length > 0;
+
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
@@ -32,6 +35,10 @@ const LandingPage = () => {
       loginUserFailed();
     }
   };
+
+  if (isAuthenticated) {
+    return <Redirect to="/home" push />
+  }
 
   return (
     <div className="flex justify-center">

@@ -4,6 +4,7 @@ import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import { LandingPage, SignUpPage } from '../UserFlow';
+import { HomeTabsPage } from '../HomeTabs';
 
 function App() {
   return (
@@ -11,8 +12,9 @@ function App() {
       <Router>
         <section className="flex-grow">
           <Switch>
-            <Route path="/signup" component={SignUpPage} />
             <Route exact path="/" component={LandingPage} />
+            <Route path="/signup" component={SignUpPage} />
+            <Route exact path="/home" component={HomeTabsPage} />
           </Switch>
         </section>
         <footer className="body-font">
