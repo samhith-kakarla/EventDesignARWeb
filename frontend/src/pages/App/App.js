@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import { TabsNavigation, HeaderBar } from '../../navigation'; 
 import { LandingPage, SignUpPage } from '../UserFlow';
-import { HomePage } from '../Home';
+import { HomePage, EditDesignPage, CreateDesignPage, ChangeActiveDesignPage } from '../Home';
 import { CameraPage } from '../Camera';
 
 function App() {
@@ -20,9 +20,15 @@ function App() {
         )}
         <section className="flex-grow">
           <Switch>
+            {/* AUTH ROUTES */}
             <Route exact path="/" component={LandingPage} />
             <Route path="/signup" component={SignUpPage} />
+            {/* DASHBOARD ROUTES */}
             <Route exact path="/home" component={HomePage} />
+            <Route exact path="/create" component={CreateDesignPage} />
+            <Route exact path="/edit" component={EditDesignPage} />
+            <Route exact path="/change" component={ChangeActiveDesignPage} />
+            {/* CAMERA ROUTES */}
             <Route exact path="/camera" component={CameraPage} />
           </Switch>
         </section>
