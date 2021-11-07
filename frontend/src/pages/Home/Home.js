@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 
 import { Redirect } from 'react-router-dom';
 
-const HomeTabsPage = () => {
+const HomePage = () => {
   const userId = useSelector((state) => state.user.userId);
   const isAuthenticated = userId && userId.length > 0;
 
@@ -17,6 +17,6 @@ const HomeTabsPage = () => {
   );
 };
 
-HomeTabsPage.propTypes = {};
+HomePage.propTypes = {};
 
-export default HomeTabsPage;
+export default HomePage;
