@@ -4,7 +4,9 @@
   "private": true,
   "dependencies": {
     "@craco/craco": "^6.4.0",
+    "@react-three/drei": "^7.20.5",
     "cra-template": "1.1.2",
+    "drei": "^2.2.21",
     "firebase": "^9.3.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -13,7 +15,9 @@
     "react-redux": "^7.2.6",
     "react-router-dom": "^5.3.0",
     "react-scripts": "4.0.3",
-    "redux": "^4.1.2"
+    "react-three-fiber": "^6.0.13",
+    "redux": "^4.1.2",
+    "three": "^0.134.0"
   },
   "scripts": {
     "start": "craco start",

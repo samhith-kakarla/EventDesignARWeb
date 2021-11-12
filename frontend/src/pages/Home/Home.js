@@ -45,7 +45,7 @@ const HomePage = () => {
   }
   
   return (
-    <div className="px-96 pt-24">
+    <div className="px-80 pt-24">
       <h1 className="text-white font-semibold text-2xl">Hello, {userFullName}!</h1>
       <p className="text-gray-three font-bold mt-8 text-sm">ACTIVE DESIGN</p>
       <div className="flex w-full mt-3">

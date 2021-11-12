@@ -1,7 +1,7 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
-const EditDesignPage = () => {
+const EditDesignPage = ({ design }) => {
   return (
     <div>
       <h1>EDIT DESIGN</h1>
@@ -9,6 +9,8 @@ const EditDesignPage = () => {
   );
 };
 
-EditDesignPage.propTypes = {};
+EditDesignPage.propTypes = {
+  design: PropTypes.object.isRequired,
+};
 
 export default EditDesignPage;

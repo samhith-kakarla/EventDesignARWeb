@@ -7,3 +7,5 @@ export const FIREBASE_MESSAGE_SENDER_ID = process.env.FIREBASE_MESSAGE_SENDER_ID
 export const FIREBASE_APP_ID = process.env.FIREBASE_APP_ID;
 
 export const USE_LOGGER = true;
+
+export const BACKEND_URL = 'http://localhost:8000';

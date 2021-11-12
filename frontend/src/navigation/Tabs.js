@@ -6,7 +6,7 @@ import './Tabs.css';
 
 const TabsNavigation = () => {
   return (
-    <nav className="bg-gray-two fixed-bottom px-96" role="navigation">
+    <nav className="bg-gray-two fixed-bottom px-80" role="navigation">
       {/* <Nav className="w-100"> */}
         <div className="flex flex-row justify-between w-100">
           {/* <NavItem key="Home-Tab"> */}
