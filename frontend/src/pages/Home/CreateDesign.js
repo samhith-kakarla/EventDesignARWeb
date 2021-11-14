@@ -27,41 +27,41 @@ const CreateDesignPage = () => {
 
   return (
     <div className="px-32 pt-36 flex flex-row h-11/12">
-      <div className="bg-orange-one w-1/4 p-3 rounded-md shadow-xl">
-        <p className="font-bold text-sm my-3">NEW DESIGN SETTINGS</p>
+      <div className="bg-orange-one w-1/4 p-8 rounded-md shadow-xl">
+        <p className="font-bold text-2xl my-6">DESIGN SETTINGS</p>
         <input 
           type="text"
-          className="text-gray-three bg-gray-one rounded-sm p-2 text-sm focus:outline-none w-40 mt-2"
+          className="text-gray-three bg-gray-one rounded-md p-4 mr-16 text-lg focus:outline-none w-full mt-2"
           placeholder="Design Name"
           value={designName}
           onChange={(e) => setDesignName(e.target.value)}
         />
-        <div className="flex flex-row items-center mt-3">
-          <p className="font-semibold text-sm">Center Table? </p>
+        <div className="flex flex-row items-center mt-5">
+          <p className="font-semibold text-2xl">Center Table? </p>
           <input
             type="checkbox"
             checked={centerTable}
-            className="ml-2"
+            className="ml-4"
             onChange={() => setCenterTable(!centerTable)}
           />
         </div>
-        <div className="flex flex-row items-center mt-2">
-          <p className="font-semibold text-sm">Speakers? </p>
+        <div className="flex flex-row items-center mt-3">
+          <p className="font-semibold text-2xl">Speakers? </p>
           <input
             type="checkbox"
             checked={speakers}
-            className="ml-2"
+            className="ml-4"
             onChange={() => setSpeakers(!speakers)}
           />
         </div>
         <div className="flex flex-row items-center">
-          <p className="font-semibold text-sm"># of Speakers? </p>
+          <p className="font-semibold text-2xl"># of Speakers? </p>
           <select 
             name="numSpeakers" 
             disabled={!speakers} 
             value={numSpeakers}
             onChange={(e) => setNumSpeakers(e.target.value)}
-            className="m-2"
+            className="m-4"
           >
             <option value={1}>1</option>
             <option value={2}>2</option>
@@ -72,22 +72,22 @@ const CreateDesignPage = () => {
           </select>
         </div>
         <div className="flex flex-row items-center">
-          <p className="font-semibold text-sm">Subwoofers? </p>
+          <p className="font-semibold text-2xl">Subwoofers? </p>
           <input
             type="checkbox"
             checked={subwoofers}
-            className="ml-2"
+            className="ml-4"
             onChange={() => setSubwoofers(!subwoofers)}
           />
         </div>
         <div className="flex flex-row items-center">
-          <p className="font-semibold text-sm"># of Subwoofers? </p>
+          <p className="font-semibold text-2xl"># of Subwoofers? </p>
           <select 
             name="numSpeakers" 
             disabled={!subwoofers} 
             value={numSubwoofers}
             onChange={(e) => setNumSubwoofers(e.target.value)}
-            className="m-2"
+            className="m-4"
           >
             <option value={1}>1</option>
             <option value={2}>2</option>
@@ -98,22 +98,22 @@ const CreateDesignPage = () => {
           </select>
         </div>
         <div className="flex flex-row items-center">
-          <p className="font-semibold text-sm">Lighting Stand? </p>
+          <p className="font-semibold text-2xl">Lighting Stand? </p>
           <input
             type="checkbox"
             checked={lightingStand}
-            className="ml-2"
+            className="ml-4"
             onChange={() => setLightingStand(!lightingStand)}
           />
         </div>
-        <div className="flex flex-row items-center">
-          <p className="font-semibold text-sm"># of Lights? </p>
+        <div className="flex flex-row items-center pb-16">
+          <p className="font-semibold text-2xl"># of Lights? </p>
           <select 
             name="numSpeakers" 
             disabled={!lightingStand} 
             value={numLights}
             onChange={(e) => setNumLights(e.target.value)}
-            className="m-2"
+            className="m-4"
           >
             <option value={1}>1</option>
             <option value={2}>2</option>
