@@ -56,14 +56,14 @@ const SignUpPage = () => {
 
   return (
     <div className="flex justify-center">
-      <div className="mt-20">
-        <p className="text-xs font-bold my-2 text-orange-one">NAME</p>
+      <div className="mt-40">
+        <p className="text-lg font-bold my-2 text-orange-one">NAME</p>
         <div className="flex flex-row bg-gray-one text-gray-three rounded-md border-gray-three border p-1 mb-4">
           <div>
             <FaUser
               color="#7B8794"
-              className="p-2"
-              size={35}
+              className="p-3"
+              size={55}
             />
           </div>
           <input 
@@ -75,16 +75,16 @@ const SignUpPage = () => {
             }}
             placeholder="Full Name"
             autoCapitalize="none"
-            className="flex-1 ml-2 text-gray-three bg-gray-one rounded-md focus:outline-none w-72"
+            className="flex-1 ml-2 text-xl text-gray-three bg-gray-one rounded-md focus:outline-none w-96"
           />
         </div>
-        <p className="text-xs font-bold my-2 text-orange-one">EMAIL</p>
+        <p className="text-lg mt-5 font-bold my-2 text-orange-one">EMAIL</p>
         <div className="flex flex-row bg-gray-one text-gray-three rounded-md border-gray-three border p-1 mb-4">
           <div>
             <MdMail 
               color="#7B8794"
-              className="p-2"
-              size={35}
+              className="p-3"
+              size={55}
             />
           </div>
           <input 
@@ -96,16 +96,16 @@ const SignUpPage = () => {
             }}
             placeholder="name@email.com"
             autoCapitalize="none"
-            className="flex-1 ml-2 text-gray-three bg-gray-one rounded-md focus:outline-none w-72"
+            className="flex-1 ml-2 text-xl text-gray-three bg-gray-one rounded-md focus:outline-none w-96"
           />
         </div>
-        <p className="text-xs font-bold my-2 text-orange-one">PASSWORD</p>
+        <p className="text-lg mt-5 font-bold my-2 text-orange-one">PASSWORD</p>
         <div className="flex flex-row bg-gray-one text-gray-three rounded-md border-gray-three border p-1">
           <div>
             <FaLock 
               color="#7B8794"
-              className="p-2"
-              size={35}
+              className="p-3"
+              size={55}
             />
           </div>
           <input 
@@ -117,11 +117,11 @@ const SignUpPage = () => {
             }}
             placeholder="**********"
             autoCapitalize="none"
-            className="flex-1 ml-2 text-gray-three bg-gray-one rounded-md focus:outline-none w-72"
+            className="flex-1 ml-2 text-xl text-gray-three bg-gray-one rounded-md focus:outline-none w-96"
           />
         </div>
-        <button onClick={handleSignUp} className="bg-orange-three hover:bg-orange-two transition duration-300 ease-in-out text-white m-auto w-full p-2 font-bold rounded-md mt-6">SIGN UP</button>
-        <p className=" text-gray-three mt-6 text-center">Already have an account?    <Link to="/" className="text-orange-one hover:text-orange-two transition duration-300 ease-in-out font-semibold ml-3">Login</Link> </p>
+        <button onClick={handleSignUp} className="bg-orange-three hover:bg-orange-two transition duration-300 ease-in-out text-white m-auto w-full text-xl p-3 font-bold rounded-md mt-8">SIGN UP</button>
+        <p className=" text-gray-three mt-6 text-xl text-center">Already have an account?    <Link to="/" className="text-orange-one hover:text-orange-two transition duration-300 ease-in-out font-semibold ml-3">Login</Link> </p>
         {error !== '' && (
           <p className="text-center text-red-600 text-xs mt-6">{error}</p>
         )}

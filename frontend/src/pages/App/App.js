@@ -38,7 +38,7 @@ function App() {
         <footer className="body-font">
           <div className="bg-gray-two">
             <div className="container mx-auto py-4 px-5">
-              <p className="text-gray-three text-sm text-center">
+              <p className="text-gray-three text-lg text-center">
                 © 2021 Event Design AR
               </p>
             </div>

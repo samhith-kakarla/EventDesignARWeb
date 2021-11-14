@@ -1,4 +1,9 @@
-import { signInWithEmailAndPassword, createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
+import { 
+  signInWithEmailAndPassword, 
+  createUserWithEmailAndPassword, 
+  updateProfile,
+  signOut, 
+} from 'firebase/auth';
 import { auth as firebaseAuth } from './config';
 
 export const signup = async (name, email, password, thenFunc) => {
@@ -128,11 +133,12 @@ export const login = async (email, password, thenFunc) => {
 //   }
 // };
 
-// export const logout = async (thenFunc, catchFunc) => {
-//   try {
-//     await firebaseAuth.signOut();
-//     await thenFunc();
-//   } catch (error) {
-//     catchFunc(error);
-//   }
-// };
+export const logout = async () => {
+  try {
+    await signOut(firebaseAuth);
+    return '';
+  } catch (error) {
+    console.log(error.message);
+    return error;
+  }
+};

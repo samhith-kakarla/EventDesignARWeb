@@ -1,28 +1,46 @@
-import React from 'react';
+import React, { useState, useRef } from 'react';
 import PropTypes from 'prop-types';
 
-import { Canvas } from '@react-three/fiber';
+import { Canvas, useFrame, useThree } from '@react-three/fiber';
 import { OrbitControls, Stars } from '@react-three/drei';
+import { useDrag } from 'react-use-gesture';
 
-const DesignEditor = ({ width, height }) => {
+function DraggableDodecahedron() {
+  const ref = useRef();
+  const [position, setPosition] = useState([0, 0, 0]);
+  const { size, viewport } = useThree();
+  const aspect = size.width / viewport.height;
+
+  useFrame(() => {
+      ref.current.rotation.z += 0.01
+      ref.current.rotation.x += 0.01
+  });
+
+  const bind = useDrag(({ offset: [x, y] }) => {
+      const [,, z] = position;
+      setPosition([x / aspect, -y / aspect, z]);
+  }, { pointerEvents: true });
+
+  return (
+      <mesh position={position} {...bind()}
+          ref={ref}>
+
+          <dodecahedronBufferGeometry attach="geometry" />
+          <meshLambertMaterial attach="material" />
+      </mesh>
+  )
+}
+
+const DesignEditor = () => {
 
   return (
     <Canvas>
-      <OrbitControls />
-      <Stars />
-      <ambientLight intensity={0.5} />
-      <spotLight position={[10, 15, 10]} angle={0.3} />
-      <mesh>
-        <boxBufferGeometry attach="geometry" />
-        <meshLambertMaterial attach="material" color="hotpink" />
-      </mesh>
+      <spotLight intensity={1.2} position={[30, 30, 50]} angle={0.2} penumbra={1} castShadow />
+      <DraggableDodecahedron />
     </Canvas>
   );
 };
 
-DesignEditor.propTypes = {
-  width: PropTypes.number.isRequired,
-  height: PropTypes.number.isRequired,
-};
+DesignEditor.propTypes = {};
 
 export default DesignEditor;

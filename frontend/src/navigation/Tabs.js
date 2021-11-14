@@ -6,13 +6,13 @@ import './Tabs.css';
 
 const TabsNavigation = () => {
   return (
-    <nav className="bg-gray-two fixed-bottom px-80" role="navigation">
+    <nav className="bg-gray-two fixed-bottom px-96" role="navigation">
       {/* <Nav className="w-100"> */}
         <div className="flex flex-row justify-between w-100">
           {/* <NavItem key="Home-Tab"> */}
             <NavLink to="/home" className="nav-link bottom-nav-link transition duration-200 ease-in-out" activeClassName="active">
               <div className="flex justify-center items-center">
-                <FaHome size={25} className="mt-5 mb-2" />
+                <FaHome size={35} className="mt-8 mb-4" />
                 {/* <div className="bottom-tab-label">Home</div> */}
               </div>
             </NavLink>
@@ -20,7 +20,7 @@ const TabsNavigation = () => {
           {/* <NavItem key="Camera-Tab"> */}
             <NavLink to="/camera" className="nav-link bottom-nav-link transition duration-200 ease-in-out" activeClassName="active">
               <div className="flex justify-center items-center">
-                <FaCamera size={25} className="mt-5 mb-2" />
+                <FaCamera size={35} className="mt-8 mb-4" />
                 {/* <div className="bottom-tab-label">Camera</div> */}
               </div>
             </NavLink>

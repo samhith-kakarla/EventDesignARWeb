@@ -1,9 +1,14 @@
 import React, { useState } from 'react';
 // import PropTypes from 'prop-types';
+import { useSelector } from 'react-redux';
+import { Redirect } from 'react-router-dom';
 
 import { DesignEditor } from '../../components';
 
 const CreateDesignPage = () => {
+  const userId = useSelector((state) => state.user.userId);
+  const isAuthenticated = userId && userId.length > 0;
+
   // General Settings
   const [designName, setDesignName] = useState('');
 
@@ -16,8 +21,12 @@ const CreateDesignPage = () => {
   const [lightingStand, setLightingStand] = useState(false);
   const [numLights, setNumLights] = useState(0);
 
+  if (!isAuthenticated) {
+    return <Redirect to="/" />
+  }
+
   return (
-    <div className="px-56 pt-28 flex flex-row">
+    <div className="px-32 pt-36 flex flex-row h-11/12">
       <div className="bg-orange-one w-1/4 p-3 rounded-md shadow-xl">
         <p className="font-bold text-sm my-3">NEW DESIGN SETTINGS</p>
         <input 
@@ -118,7 +127,7 @@ const CreateDesignPage = () => {
         </div>
       </div>
       <div className="w-3/4 border-2 rounded-md border-orange-three ml-4">
-        <DesignEditor width={600} height={300} />
+        <DesignEditor />
       </div>
     </div>
   );

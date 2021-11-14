@@ -16,7 +16,7 @@ const HomePage = () => {
   const carouselResponsive = {
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
-      items: 2,
+      items: 3,
       slidesToSlide: 1 // optional, default to 1.
     },
     tablet: {
@@ -45,15 +45,15 @@ const HomePage = () => {
   }
   
   return (
-    <div className="px-80 pt-24">
-      <h1 className="text-white font-semibold text-2xl">Hello, {userFullName}!</h1>
-      <p className="text-gray-three font-bold mt-8 text-sm">ACTIVE DESIGN</p>
+    <div className="px-96 pt-40">
+      <h1 className="text-white font-semibold text-4xl">Hello, {userFullName}!</h1>
+      <p className="text-gray-three font-bold mt-12 text-lg">ACTIVE DESIGN</p>
       <div className="flex w-full mt-3">
         <div className="bg-orange-one w-3/5">fjdsklfs</div>
         <div className="bg-orange-two w-2/5">fjdsklfs</div>
       </div>
-      <div className="flex mt-6 items-center">
-        <p className="text-gray-three font-bold text-sm">MY DESIGNS</p>
+      <div className="flex mt-12 items-center">
+        <p className="text-gray-three font-bold text-lg">MY DESIGNS</p>
         <Link to="/create"><FaPlusCircle size={20} className="text-gray-three cursor-pointer hover:text-gray-300 transition duration-300 ease-in-out ml-3" /></Link>
       </div>
       <Carousel

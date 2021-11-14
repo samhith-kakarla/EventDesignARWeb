@@ -42,14 +42,14 @@ const LandingPage = () => {
 
   return (
     <div className="flex justify-center">
-      <div className="mt-20">
-        <p className="text-xs font-bold my-2 text-orange-one">EMAIL</p>
+      <div className="mt-40">
+        <p className="text-lg font-bold my-2 text-orange-one">EMAIL</p>
         <div className="flex flex-row bg-gray-one text-gray-three rounded-md border-gray-three border p-1 mb-4">
           <div>
             <MdMail 
               color="#7B8794"
-              className="p-2"
-              size={35}
+              className="p-3"
+              size={55}
             />
           </div>
           <input 
@@ -61,16 +61,16 @@ const LandingPage = () => {
             }}
             placeholder="name@email.com"
             autoCapitalize="none"
-            className="flex-1 ml-2 text-gray-three bg-gray-one rounded-md focus:outline-none w-72"
+            className="flex-1 ml-2 text-xl text-gray-three bg-gray-one rounded-md focus:outline-none w-96"
           />
         </div>
-        <p className="text-xs font-bold my-2 text-orange-one">PASSWORD</p>
+        <p className="text-lg font-bold my-2 mt-5 text-orange-one">PASSWORD</p>
         <div className="flex flex-row bg-gray-one text-gray-three rounded-md border-gray-three border p-1">
           <div>
             <FaLock 
               color="#7B8794"
-              className="p-2"
-              size={35}
+              className="p-3"
+              size={55}
             />
           </div>
           <input 
@@ -82,11 +82,11 @@ const LandingPage = () => {
             }}
             placeholder="**********"
             autoCapitalize="none"
-            className="flex-1 ml-2 text-gray-three bg-gray-one rounded-md focus:outline-none w-72"
+            className="flex-1 ml-2 text-xl text-gray-three bg-gray-one rounded-md focus:outline-none w-96"
           />
         </div>
-        <button onClick={handleLogin} className="bg-orange-three hover:bg-orange-two transition duration-300 ease-in-out text-white m-auto w-full p-2 font-bold rounded-md mt-6">LOGIN</button>
-        <p className="text-center mt-6 text-gray-three">Don't have an account yet?    <Link to="/signup" className="text-orange-one hover:text-orange-two transition duration-300 ease-in-out font-semibold ml-3">Sign Up</Link> </p>
+        <button onClick={handleLogin} className="bg-orange-three hover:bg-orange-two transition duration-300 ease-in-out text-white m-auto w-full text-xl p-3 font-bold rounded-xl mt-8">LOGIN</button>
+        <p className="text-center mt-6 text-xl text-gray-three">Don't have an account yet?    <Link to="/signup" className="text-orange-one hover:text-orange-two transition duration-300 ease-in-out font-semibold ml-3">Sign Up</Link> </p>
         {error !== '' && (
           <p className="text-center text-red-600 text-xs mt-6">{error}</p>
         )}
